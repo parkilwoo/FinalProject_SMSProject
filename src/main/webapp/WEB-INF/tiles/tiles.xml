@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- main -->
+	<definition name="main.tiles"
+		template="/WEB-INF/views/layout/main_template.jsp">
+		<put-attribute name="header_import"
+			value="/WEB-INF/views/common/header_import.jsp" />
+		<put-attribute name="top_inc"
+			value="/WEB-INF/views/common/top_inc.jsp" />
+		<!-- <put-attribute name="top_menu" value="/WEB-INF/views/common/top_menu.jsp"/> -->
+		<put-attribute name="body"
+			value="/WEB-INF/views/main/main.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<!-- 문의전화 -->
+	<definition name="phoneguide.tiles" extends="gamelist.tiles">
+		<put-attribute name="body_top"
+			value="/WEB-INF/views/main/info_menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/main/phone_guide.jsp" />
+	</definition>
+
+	<!-- 인사말 -->
+	<definition name="common1.tiles" extends="gamelist.tiles">
+		<put-attribute name="body_top" value="/WEB-INF/views/main/info_menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/common1.jsp" />
+	</definition>
+	
+	<!-- 경기장 -->
+	<definition name="stadium.tiles" extends="gamelist.tiles">
+		<put-attribute name="body_top" value="/WEB-INF/views/main/info_menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/game/stadium.jsp" />
+	</definition>
+
+	<!-- 채팅용 -->
+	<definition name="chat.tiles"
+		template="/WEB-INF/views/chating/chat.jsp">
+	</definition>
+
+	<definition name="teamchat.tiles"
+		template="/WEB-INF/views/chating/teamchat.jsp">
+	</definition>
+
+
+	<!-- 리그용 -->
+	<definition name="userleaguepage.tiles"
+		template="/WEB-INF/views/layout/template.jsp">
+		<put-attribute name="header_import"
+			value="/WEB-INF/views/common/header_import.jsp" />
+		<put-attribute name="top_inc"
+			value="/WEB-INF/views/common/top_inc.jsp" />
+		<put-attribute name="top_menu"
+			value="/WEB-INF/views/common/top_menu.jsp" />
+		<put-attribute name="body_top"
+			value="/WEB-INF/views/league/league_menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/league/userpage.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="userleagueapply.tiles"
+		extends="userleaguepage.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/league/applypage.jsp" />
+	</definition>
+
+	<definition name="adminleaguepage1.tiles"
+		extends="admin.main">
+		<!-- <put-attribute name="left_menu" value="/WEB-INF/views/league/adminleftMenu.jsp" 
+			/> -->
+		<put-attribute name="admin_content"
+			value="/WEB-INF/views/league/adminpage1.jsp" />
+	</definition>
+
+	<definition name="adminleaguepage2.tiles"
+		extends="admin.main">
+		<!-- <put-attribute name="left_menu" value="/WEB-INF/views/league/adminleftMenu.jsp" 
+			/> -->
+		<put-attribute name="admin_content"
+			value="/WEB-INF/views/league/adminpage2.jsp" />
+	</definition>
+
+
+
+	<!-- TeamBbs(민호!) -->
+	<definition name="TeamBbs.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/TeamBbsList.jsp" />
+	</definition>
+	
+	<definition name="TeamBbsWrite.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/TeamBbsWrite.jsp" />
+	</definition>
+	
+	<definition name="TeamBbsDetail.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/TeamBbsDetail.jsp" />
+	</definition>
+	
+	<definition name="TeamBbsUpdate.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/TeamBbsUpdate.jsp" />
+	</definition>
+	<definition name="SubBbs.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/SubBbsList.jsp" />
+	</definition>
+	<definition name="SubBbsWrite.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/SubBbsWrite.jsp" />
+	</definition>
+	<definition name="SubBbsUpdate.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/SubBbsUpdate.jsp" />
+	</definition>
+	<definition name="SubBbsDetail.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/SubBbsDetail.jsp" />
+	</definition>
+<!-- 	<definition name="common1.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/common1.jsp" />
+	</definition> -->	
+	
+	<!-- admin-bbs 민호 -->
+	<definition name="admin_bbs_list.tiles" extends="admin.main">
+		<put-attribute name="admin_content" value="/WEB-INF/views/admin/teamBbs/AdminTeamBbsList.jsp"/>	
+	</definition>
+	<definition name="admin_bbs_detail.tiles" extends="admin.main">
+		<put-attribute name="admin_content" value="/WEB-INF/views/admin/teamBbs/AdminTeamBbsDetail.jsp"/>	
+	</definition>
+	<definition name="admin_bbs_report.tiles" extends="admin_team_report.tiles">
+		<put-attribute name="admin_content" value="/WEB-INF/views/admin/teamBbs/AdminTeamBbsReportList.jsp"/>	
+	</definition>
+	<definition name="admin_bbs_comment_report.tiles" extends="admin_team_report.tiles">
+		<put-attribute name="admin_content" value="/WEB-INF/views/admin/teamBbs/AdminTeamBbsCommentReportList.jsp"/>	
+	</definition>
+	<!-- admin-rank -->
+	<definition name="adminMMRRankList.tiles" extends="admin.main">
+        <put-attribute name="admin_content" value="/WEB-INF/views/admin/rank/MMRRankList.jsp" />
+    </definition>
+<!--     <definition name="common1.tiles" extends="teamapplication.tiles">
+		<put-attribute name="body" value="/WEB-INF/views/teamBbs/common1.jsp" />
+	</definition> -->
+
+
+	<!-- admin-team 재덕성님 -->
+	<definition name="admin_team_list.tiles"
+		extends="admin.main">
+		<put-attribute name="admin_content"
+			value="/WEB-INF/views/admin/team/AdminteamList.jsp" />
+	</definition>
+	<definition name="admin_team_detail.tiles"
+		extends="admin.main">
+		<put-attribute name="admin_content"
+			value="/WEB-INF/views/admin/team/AdminteamDetail.jsp" />
+	</definition>
+
+	<definition name="admin_team_report.tiles" template="/WEB-INF/views/layout/admin_template2.jsp">
+		<put-attribute name="admin_import" value="/WEB-INF/views/admin/common/admin_import.jsp"/>
+		<put-attribute name="admin_content" value="/WEB-INF/views/admin/team/AdminTeamReportList.jsp"/>	
+	</definition>
+	
+	
+	<definition name="deniedPage.tiles" template="/WEB-INF/views/status/403.jsp" >
+	</definition>
+
+	<!-- 보경누나 지현누나꺼 -->
+	<!-- game -->
+	<definition name="gamelist.tiles"
+		template="/WEB-INF/views/layout/template.jsp">
+		<put-attribute name="header_import"
+			value="/WEB-INF/views/common/header_import.jsp" />
+		<put-attribute name="top_inc"
+			value="/WEB-INF/views/common/top_inc.jsp" />
+		<put-attribute name="top_menu"
+			value="/WEB-INF/views/common/top_menu.jsp" />
+		<put-attribute name="body_top"
+			value="/WEB-INF/views/game/game_menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/game_list.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="gamemake.tiles" extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/game_make.jsp" />
+	</definition>
+
+	<definition name="gamedetail.tiles" extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/game_detail.jsp" />
+	</definition>
+
+	<definition name="game_update.tiles"
+		extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/game_update.jsp" />
+	</definition>
+
+	<!-- Betting -->
+	<definition name="bettinglist.tiles"
+		extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/BettingList.jsp" />
+	</definition>
+
+	<definition name="betting.tiles" extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/Betting.jsp" />
+	</definition>
+
+	<definition name="gameResultList.tiles"
+		extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/GameResultList.jsp" />
+	</definition>
+
+	<definition name="gameResultDetail.tiles"
+		extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/GameResultDetail.jsp" />
+	</definition>
+
+	 <definition name="gameResultAdmin.tiles" extends="admin.main">
+        <put-attribute name="admin_content" value="/WEB-INF/views/admin/game/GameResultAdmin.jsp" />
+    </definition>
+    
+    <definition name="admingameResultDetail.tiles" extends="admin.main">
+        <put-attribute name="admin_content" value="/WEB-INF/views/admin/game/AdminGameResultDetail.jsp" />
+    </definition>
+
+	<definition name="MMRRankList.tiles"
+		extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/game/MMRRankList.jsp" />
+	</definition>
+
+
+	<!-- video -->
+	<definition name="videolist.tiles" extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/video/video_list.jsp" />
+	</definition>
+
+	<definition name="videomake.tiles" extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/video/video_make.jsp" />
+	</definition>
+
+	<definition name="videodetail.tiles"
+		extends="gamelist.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/video/video_detail.jsp" />
+	</definition>
+
+	<!-- video_report -->
+	<definition name="admin_report.tiles" extends="admin.main">
+		<put-attribute name="admin_content"	value="/WEB-INF/views/admin/video/admin_video_report.jsp" />
+	</definition>
+
+	<definition name="admin_report_detail.tiles" extends="admin.main">
+		<put-attribute name="admin_content"	value="/WEB-INF/views/admin/video/admin_video_report_detail.jsp" />
+	</definition>
+
+
+
+	<!-- 일우꺼 -->
+
+	<!-- notice -->
+	<definition name="notice.list" extends="gamelist.tiles">
+		<put-attribute name="body_top"
+			value="/WEB-INF/views/main/info_menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/notice/notice_bbs_list.jsp" />
+
+	</definition>
+
+	<definition name="notice.detail" extends="notice.list">
+		<put-attribute name="body"
+			value="/WEB-INF/views/notice/notice_bbs_detail.jsp" />
+	</definition>
+
+	<definition name="notice.write" extends="admin.main">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/admin_notice_write.jsp" />
+	</definition>
+	
+	<!-- admin  -->
+		<definition name="admin.main" template="/WEB-INF/views/layout/admin_template.jsp">
+			<put-attribute name="admin_import" value="/WEB-INF/views/admin/common/admin_import.jsp"/>
+			<put-attribute name="admin_left" value="/WEB-INF/views/admin/common/admin_left.jsp"/>
+			<put-attribute name="admin_content" value="/WEB-INF/views/admin/admin_main.jsp"/>
+		</definition>
+		<definition name="admin_notice_list" extends="admin.main">
+			<put-attribute name="admin_content" value="/WEB-INF/views/admin/notice/admin_notice_list.jsp"/>	
+		</definition>
+		<definition name="admin_notice_Write" extends="admin.main">
+			<put-attribute name="admin_content" value="/WEB-INF/views/admin/notice/admin_notice_write.jsp"/>	
+		</definition>
+	  <definition name="admin_notice_detail" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/notice/admin_notice_detail.jsp" />
+	  </definition>
+	  <definition name="admin_notice_update" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/notice/admin_notice_update.jsp" />
+	  </definition>
+	  <definition name="admin_member_list" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/member/admin_member_list.jsp" />
+	  </definition>
+	  <definition name="admin_member_detail" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/member/admin_member_detail.jsp" />
+	  </definition>
+  	  <definition name="admin_exchange_list" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/member/admin_exchange_list.jsp" />
+	  </definition>
+  	  <definition name="admin_exchange_detail" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/member/admin_exchange_detail.jsp" />
+	  </definition>
+   	  <definition name="admin_game_list" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/game/admin_game_list.jsp" />
+	  </definition>	  	  
+   	  <definition name="admin_game_detail" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/game/admin_game_detail.jsp" />
+	  </definition>
+   	  <definition name="admin_chart_money" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/chart/admin_chart_money.jsp" />
+	  </definition>
+   	  <definition name="admin_chart_monthly_money" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/chart/admin_chart_monthly_money.jsp" />
+	  </definition>
+   	  <definition name="admin_chart_category" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/chart/admin_chart_category.jsp" />
+	  </definition>
+   	  <definition name="admin_chart_score" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/chart/admin_chart_score.jsp" />
+	  </definition>
+   	  <definition name="admin_chart_stadiumCount" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/chart/admin_chart_stadiumCount.jsp" />
+	  </definition>	  	  	  	 	  	
+   	  <definition name="admin_chart_location" extends="admin.main">
+	  	<put-attribute name="admin_content" value="/WEB-INF/views/admin/chart/admin_chart_location.jsp" />
+	  </definition>
+
+	<!-- 재덕꺼 -->
+	<!-- JD Team -->
+	<definition name="teamapplication.tiles"
+		template="/WEB-INF/views/layout/template.jsp">
+		<put-attribute name="header_import"
+			value="/WEB-INF/views/common/header_import.jsp" />
+		<put-attribute name="top_inc"
+			value="/WEB-INF/views/common/top_inc.jsp" />
+		<put-attribute name="top_menu"
+			value="/WEB-INF/views/common/top_menu.jsp" />
+		<put-attribute name="body_top"
+			value="/WEB-INF/views/team/team_menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/teamapplication.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer.jsp" />
+	</definition>
+
+	<definition name="teamlist.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/teamlist.jsp" />
+	</definition>
+
+	<definition name="teamdetail.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/teamdetail.jsp" />
+	</definition>
+
+	<definition name="memberapplication.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/memberapplication.jsp" />
+	</definition>
+
+	<definition name="matchinglist.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/matchinglist.jsp" />
+	</definition>
+
+	<definition name="memberstate.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/memberstate.jsp" />
+	</definition>
+
+	<definition name="teamdetailup.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/teamdetailup.jsp" />
+	</definition>
+
+	<definition name="recruitment.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/recruitment.jsp" />
+	</definition>
+	<definition name="recruitmentlist.tiles"
+		extends="teamapplication.tiles">
+		<put-attribute name="body"
+			value="/WEB-INF/views/team/recruitmentlist.jsp" />
+	</definition>
+
+
+
+
+
+
+
+</tiles-definitions>
